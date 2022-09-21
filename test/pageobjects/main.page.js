@@ -1,18 +1,25 @@
-class MainPage extends Page {
-  get closeCookieModalWindowButton() {
+const Page = require("../pageobjects/page");
+
+class MainPage {
+  get button__closeCookieModalWindow() {
     return $('[aria-label="close and deny"]');
+  }
+  get input__sighUp() {
+    return $('input[name="email"]');
+  }
+  get buttom__submit() {
+    return $('[type="submit"]');
   }
 
   async open__siteMainPage() {
-    await browser.url("https://telnyx.com");
-    await browser.setWindowSize(1920, 1080);
+    await Page.open();
   }
 
   async click__closeCookieModalWindowButton() {
-    if (await this.closeCookieModalWindowButton.isDisplayed()) {
-      await this.closeCookieModalWindowButton.click();
+    if (await this.button__closeCookieModalWindow.isDisplayed()) {
+      await this.button__closeCookieModalWindow.click();
     }
   }
 }
 
-export default new MainPage();
+module.exports = new MainPage();

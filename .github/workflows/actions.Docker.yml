@@ -1,0 +1,13 @@
+name: CI
+on: 
+    push:
+        branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: truesne/wdiotelnyx
+      options: --shm-size=4gb
+    steps:
+      - name: Test
+        run: cd /app && npm run test:chrome:headless:login

@@ -1,8 +1,14 @@
 .DS_Store
+
 node_modules
+
 allure-report
 allure-results
+allure-report/** 
+allure-results/**
 reports/**
+
+Dockerfile
 
 # Logs
 logs

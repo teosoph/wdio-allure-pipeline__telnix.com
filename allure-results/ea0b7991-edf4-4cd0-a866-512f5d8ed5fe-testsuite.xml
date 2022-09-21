@@ -1,0 +1,33 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1663693182757' stop='1663693230384'>
+    <name>Check registration possibility through `Try for free ->` field</name>
+    <title>Check registration possibility through `Try for free ->` field</title>
+    <test-cases>
+        <test-case start='1663693182758' status='broken' stop='1663693230383'>
+            <name>Check registration possibility with valid credentials</name>
+            <title>Check registration possibility with valid credentials</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='firefox-104.0.2'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>element ("input[name="email"]") still not displayed after 40000ms</message>
+                <stack-trace>Error: element ("input[name="email"]") still not displayed after 40000ms
+                    at C:\Users\GRIM\Desktop\QA\wdio-allure-pipeline__telnix.com\node_modules\webdriverio\build\commands\browser\waitUntil.js:66:23
+                    at async Element.wrapCommandFn (C:\Users\GRIM\Desktop\QA\wdio-allure-pipeline__telnix.com\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Element.elementErrorHandlerCallbackFn (C:\Users\GRIM\Desktop\QA\wdio-allure-pipeline__telnix.com\node_modules\webdriverio\build\middlewares.js:24:32)
+                    at async Element.wrapCommandFn (C:\Users\GRIM\Desktop\QA\wdio-allure-pipeline__telnix.com\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Element.wrapCommandFn (C:\Users\GRIM\Desktop\QA\wdio-allure-pipeline__telnix.com\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Element.elementErrorHandlerCallbackFn (C:\Users\GRIM\Desktop\QA\wdio-allure-pipeline__telnix.com\node_modules\webdriverio\build\middlewares.js:24:32)
+                    at async Element.wrapCommandFn (C:\Users\GRIM\Desktop\QA\wdio-allure-pipeline__telnix.com\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Context.&lt;anonymous> (C:\Users\GRIM\Desktop\QA\wdio-allure-pipeline__telnix.com\test\specs\registrationTest.spec.js:8:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

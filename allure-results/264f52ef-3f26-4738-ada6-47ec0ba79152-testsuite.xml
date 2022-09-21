@@ -1,0 +1,33 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1663759997188' stop='1663760013738'>
+    <name>Check registration possibility through `Try for free ->` field</name>
+    <title>Check registration possibility through `Try for free ->` field</title>
+    <test-cases>
+        <test-case start='1663759997189' status='failed' stop='1663760013737'>
+            <name>Check registration possibility with valid credentials</name>
+            <title>Check registration possibility with valid credentials</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.127'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Expect $(`input[name="email"]`) to have property value containing
+                
+                Expected: "test123@ua.com0"
+                Received: "test123@ua.com"</message>
+                <stack-trace>Error: Expect $(`input[name="email"]`) to have property value containing
+                
+                Expected: "test123@ua.com0"
+                Received: "test123@ua.com"
+                    at Context.&lt;anonymous> (C:\Users\GRIM\Desktop\QA\wdio-allure-pipeline__telnix.com\test\specs\registrationTest.spec.js:10:40)
+                    at processTicksAndRejections (node:internal/process/task_queues:96:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1663767250588' stop='1663767264306'>
+    <name>Check registration possibility through `Try for free ->` field</name>
+    <title>Check registration possibility through `Try for free ->` field</title>
+    <test-cases>
+        <test-case start='1663767250589' status='passed' stop='1663767264304'>
+            <name>TC-001 Check registration with valid credentials</name>
+            <title>TC-001 Check registration with valid credentials</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='firefox-104.0.2'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

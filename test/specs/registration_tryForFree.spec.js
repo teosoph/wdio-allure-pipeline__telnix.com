@@ -27,6 +27,6 @@ describe("Check registration possibility through `Try for free ->` field", () =>
     await MainPage.buttom__submit.click();
     await browser.pause(5000);
     await expect(browser).toHaveUrlContaining("sign-up");
-    await expect(signUpPage.input__email).toHaveValueContaining(invalid_testEmail);
+    await expect(SignUpPage.input__email).toHaveValueContaining(invalid_testEmail);
   });
 });

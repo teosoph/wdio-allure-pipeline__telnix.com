@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npx wdio config/wdio.conf.js",
-    "test:chrome": "npx wdio config/wdio.chrome.conf.js",
     "test:chrome:headless": "npx wdio config/wdio.chrome.headless.conf.js",
+    "test:chrome": "npx wdio config/wdio.chrome.conf.js",
+    "test:chrome:TC-001/002": "npx wdio config/wdio.chrome.conf.js --spec registration_tryForFree.spec.js",
+    "test:chrome:TC-003/004": "npx wdio config/wdio.chrome.conf.js --spec registration_signUp.spec.js",
     "test:firefox": "npx wdio config/wdio.firefox.conf.js",
     "test:firefox:headless": "npx wdio config/wdio.firefox.headless.conf.js",
     "allure:generate": "npx allure generate allure-results --clean",

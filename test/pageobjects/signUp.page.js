@@ -25,6 +25,12 @@ class SignUpPage {
   get button__createAccount() {
     return $('button[type="submit"]');
   }
+  get message__messageOnVerifyEmailPage() {
+    return $("div>h1");
+  }
+  get message__warningInvalidCredentials() {
+    return $('//span[contains(text(), "That email and password")]');
+  }
   // Checking the SignUp page is opened
   async check__signUpPageOpened() {
     await expect(browser).toHaveUrlContaining("sign-up");
@@ -68,12 +74,30 @@ class SignUpPage {
   async check__redirectionToVerifyEmailPage() {
     await expect(browser).toHaveUrlContaining("/verify-email");
   }
-
-  get message__messageOnVerifyEmailPage() {
-    return $("div>h1");
-  }
   async check__messageOnVerifyEmailPage() {
     await expect(this.message__messageOnVerifyEmailPage).toHaveTextContaining("We've sent you an email to activate your account");
+  }
+  async check__messageWarningInvalidCredentials() {
+    await expect(this.message__warningInvalidCredentials).toHaveTextContaining("That email and password combination is not valid");
+  }
+
+  // TC-006
+  get link__termsAndConditions() {
+    return $('a[href="/terms-and-conditions-of-service"]');
+  }
+  get title__termsAndConditions() {
+    return $('h1[class*="Text"]');
+  }
+
+  async click__termsLink() {
+    await this.link__termsAndConditions.click();
+  }
+
+  async check__redirectionToTermsPage() {
+    await expect(browser).toHaveUrlContaining("/terms-and-conditions-of-service");
+  }
+  async check__messagePresenceOnPage() {
+    await expect(this.title__termsAndConditions).toHaveTextContaining("TELNYX TERMS AND CONDITIONS OF SERVICE");
   }
 }
 

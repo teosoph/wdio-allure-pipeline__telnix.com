@@ -29,31 +29,21 @@ class MainPage {
     return $('li div a[href="/sign-up"]');
   }
   // TC-005
-  footerProductsMenuItems = ["Elastic SIP Trunking", "Call Control - Voice API", "Programmable SMS", "WhatsApp API", "Secure Faxing", "Wireless - Cellular IoT", "Number Lookup", "Global Numbers", "Verify API", "See all Products"];
-
-  // get items__footerMenuList() {
-  //   return $(`(//p[text()='Products']/following-sibling::ul//span//span)`);
-  // }
-  // get item__footerMenuList() {
-  //   return $(`(//p[text()='Products']/following-sibling::ul//span//span)[${i + 1}]`);
-  // }
-  // async checkFooterProductsMenuItemsName() {
-  //   await this.items__footerMenuList.scrollIntoView();
-  //   for (let i = 0; i < 9; i++) {
-  //     await expect(`(//p[text()='Products']/following-sibling::ul//span//span)[${i + 1}]`).toHaveTextContaining(`${this.footerProductsMenuItems[i]}`);
-  //   }
-  // }
-  get items__footerMenu() {
+  get list__footerProductMenu() {
     return $(`(//p[text()='Products']/following-sibling::ul//span//span)`);
   }
-  get item__footerMenuList() {
-    for (let i = 0; i < 9; i++) {
-      return $(`(//p[text()='Products']/following-sibling::ul//span//span)[${i + 1}]`);
-    }
+
+  item__footerMenuList(i) {
+    return $(`(//p[text()='Products']/following-sibling::ul//span//span)[${i + 1}]`);
   }
+
+  items__footerProductsMenu = ["Elastic SIP Trunking", "Call Control - Voice API", "Programmable SMS", "WhatsApp API", "Secure Faxing", "Wireless - Cellular IoT", "Number Lookup", "Global Numbers", "Verify API", "See all Products"];
+
   async checkFooterProductsMenuItemsName() {
-    await this.items__footerMenu.scrollIntoView();
-    await expect(this.item__footerMenuList).toHaveTextContaining(`${this.footerProductsMenuItems[i]}`);
+    await this.list__footerProductMenu.scrollIntoView();
+    for (let i = 0; i < this.items__footerProductsMenu.length; i++) {
+      expect(await this.item__footerMenuList(i)).toHaveTextContaining(`${this.items__footerProductsMenu[i]}`);
+    }
   }
 
   // TC-006

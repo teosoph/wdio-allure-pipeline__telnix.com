@@ -1,7 +1,10 @@
+// TC-003, TC-004
+// Checking the registration possibility through the 'Sign Up' button
+
 const MainPage = require("../pageobjects/main.page");
 const SignUpPage = require("../pageobjects/signUp.page");
 
-describe("Check registration possibility through the 'Sign Up' button", () => {
+describe("Checking the registration possibility through the 'Sign Up' button", () => {
   xit("TC-003 Check registration with valid credentials", async () => {
     await MainPage.open__siteMainPage();
     await MainPage.click__closeCookieModalWindowButton();

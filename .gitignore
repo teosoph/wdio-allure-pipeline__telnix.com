@@ -10,6 +10,8 @@ reports/**
 
 Dockerfile
 
+screenshots
+
 # Logs
 logs
 *.log

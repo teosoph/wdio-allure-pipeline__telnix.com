@@ -1,5 +1,5 @@
 // TC-008
-// Check the ability to search in the Support Center page with random data
+// Checking the ability to search in the Support Center page with random data
 
 const MainPage = require("../pageobjects/main.page");
 const SupportPage = require("../pageobjects/support.page");

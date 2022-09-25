@@ -1,4 +1,3 @@
-const { Browser } = require("puppeteer-core");
 const Page = require("../pageobjects/page");
 
 class MainPage {
@@ -90,6 +89,17 @@ class MainPage {
   async click__supportCenterLink() {
     await this.link__supportCenter.moveTo();
     await this.link__supportCenter.click();
+  }
+
+  // TC-009
+  // Expert Talk page
+
+  get button__talkToExpert() {
+    return $(`li>div>a[href*='/contact-us']`);
+  }
+  async click__talkToExpertButton() {
+    await this.button__talkToExpert.click();
+    await browser.pause(2000);
   }
 }
 

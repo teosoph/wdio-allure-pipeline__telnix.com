@@ -1,10 +1,13 @@
+// TC-001, TC-002
+// Checking the registration possibility through `Try for free ->` field
+
 const MainPage = require("../pageobjects/main.page");
 const SignUpPage = require("../pageobjects/signUp.page");
 
 const valid_testEmail = "test123@ua.com";
 const invalid_testEmail = "test123@ua";
 
-describe("Check registration possibility through `Try for free ->` field", () => {
+describe("Checking the registration possibility through `Try for free ->` field", () => {
   it("TC-001 Check registration with valid credentials", async () => {
     await MainPage.open__siteMainPage();
     await MainPage.click__closeCookieModalWindowButton();

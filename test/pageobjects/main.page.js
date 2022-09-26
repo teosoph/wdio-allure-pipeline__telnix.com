@@ -172,6 +172,24 @@ class MainPage {
   async check__redirectedPageForLink() {
     await expect(browser).toHaveUrlContaining("sign-up");
   }
+  // TC-015
+  // Footer social connections
+  get block__footer() {
+    return $("(//footer)[3]");
+  }
+  async scroll__footer() {
+    await this.block__footer.scrollIntoView();
+  }
+  get link__facebook() {
+    return $('[href="https://www.facebook.com/Telnyx/"]');
+  }
+  async click__facebookLink() {
+    await this.link__facebook.click();
+  }
+  async check__facebookPageRedirection() {
+    await browser.switchWindow("https://www.facebook.com/Telnyx/");
+    await expect(browser).toHaveUrl("https://www.facebook.com/Telnyx/");
+  }
 }
 
 module.exports = new MainPage();

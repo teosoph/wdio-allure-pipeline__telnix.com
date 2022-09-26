@@ -39,7 +39,7 @@ class CommonPage {
   // };
 
   invalidUserData = {
-    workEmail: this.generateRandomData(6) + "@test.ua",
+    workEmail: this.generateRandomData(6) + "@test",
     fullName: "Igour Kirich" + this.generateRandomData(4),
     password: "Test" + this.generateRandomData(),
     firstName: "Igor" + this.generateRandomData(3),
@@ -47,10 +47,6 @@ class CommonPage {
     phoneNumber: this.generateRandomData(7),
     companyWebsite: "https:www.ukr.net",
   };
-
-  // checkLinkForContains(urlSignUpPage) {
-  //   cy.url().should("not.include", urlSignUpPage);
-  // }
 }
 
 module.exports = new CommonPage();

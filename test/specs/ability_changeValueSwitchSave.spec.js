@@ -1,11 +1,11 @@
 // TC-011
-//  Checking the ability to changer information in the “Switch + Save with Telnyx” block
+//  Checking the ability to changer value in the “Switch + Save with Telnyx” block
 
 const MainPage = require("../pageobjects/main.page");
 const CommonPage = require("../pageobjects/common.page");
 
-describe(`Checking the ability to changer information in the “Switch + Save with Telnyx” block`, () => {
-  it("TC-011 Check changer info ability", async () => {
+describe(`Checking the ability to changer value in the “Switch + Save with Telnyx” block`, () => {
+  it("TC-011 Check changer value ability", async () => {
     await MainPage.open__siteMainPage();
     await MainPage.click__closeCookieModalWindowButton();
 

@@ -101,9 +101,9 @@ class MainPage {
     await this.button__talkToExpert.click();
     await browser.pause(2000);
   }
+
   // TC-11
   // Voice Call Costs in the “Switch + Save with Telnyx” block
-
   get block__switchSaveWithTelnyx() {
     return $("h2>a>span");
   }
@@ -111,14 +111,12 @@ class MainPage {
     await this.block__switchSaveWithTelnyx.scrollIntoView();
     await browser.pause(5000);
   }
-
   get block__compareCost() {
     return $("//h2/a/following::div[1]/div/div");
   }
   async makeScreenshot__compareCostBlock_1() {
     await this.block__compareCost.saveScreenshot(`screenshots/compareCosts-screenshot_1.png`);
   }
-
   get button__voice() {
     return $('//button[contains(text(),"Voice")]');
   }
@@ -131,7 +129,6 @@ class MainPage {
   async click__tollFreeNumbersRadioButton() {
     await this.button__tollFreeNumbersRadio.click();
   }
-
   get slider__shiftMakeOutboundCalls_1() {
     return $('(//div[@role="slider"])[1]');
   }
@@ -150,6 +147,30 @@ class MainPage {
   }
   async makeScreenshot__compareCostBlock_2() {
     await this.block__compareCost.saveScreenshot(`screenshots/compareCosts-screenshot_2.png`);
+  }
+
+  //TC-012/TC-013
+  //  Wait List
+  get link__joinWaitList() {
+    return $('span>a[href="/products/storage"]');
+  }
+  async click__joinWaitListLink() {
+    await this.link__joinWaitList.click();
+  }
+
+  // TC-014
+  // Registration through the “Switch+Save with Telnyx” block
+  get button__createFreeTrialAccount() {
+    return $('//a[contains(text(),"Create")]');
+  }
+  async click__createFreeTrialAccountButton() {
+    await this.button__createFreeTrialAccount.click();
+  }
+  get link__signUpPage() {
+    return $('//a[contains(text(),"Create")]');
+  }
+  async check__redirectedPageForLink() {
+    await expect(browser).toHaveUrlContaining("sign-up");
   }
 }
 

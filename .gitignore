@@ -9,7 +9,7 @@ allure-results/**
 reports/**
 
 
-screenshots
+screenshots/**
 
 # Logs
 logs

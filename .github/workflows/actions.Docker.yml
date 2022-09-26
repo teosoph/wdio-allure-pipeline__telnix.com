@@ -12,5 +12,5 @@ jobs:
       - name: Tests chrome
         run: cd /app && npm run test:chrome:headless
 
-      - name: Tests firefox
-        run: cd /app && npm run test:firefox:headless
+      # - name: Tests firefox
+      #   run: cd /app && npm run test:firefox:headless

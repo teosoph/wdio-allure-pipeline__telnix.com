@@ -10,6 +10,6 @@ describe(`Checking the operation of the dropdown menu in the header`, () => {
     await MainPage.click__closeCookieModalWindowButton();
 
     await MainPage.mouseHoverOnHeaderMenuTabs();
-    // await   MainPage.makeHoveredHeaderMenuTabsScreenshot(tabPosition[i]);
+    // await MainPage.makeScreenshot__hoveredHeaderMenuTab();
   });
 });

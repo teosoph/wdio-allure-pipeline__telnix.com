@@ -71,15 +71,15 @@ class MainPage {
 
       // await this.tab__headerMenu.waitForExist({ timeout: 5000 });
       // await this.tab__headerMenu.takeElementScreenshot();
-
       await this.tab__headerMenu.saveScreenshot(`screenshots/screenshot_${this.tabPosition[i]}.png`);
     }
   }
 
-  //  async makeHoveredHeaderMenuTabsScreenshot(this.tabPosition) {
-  //     await this.tab__headerMenu.saveScreenshot(`my-screenshot_${this.tabPosition}.png`);
-
-  //   }
+  async makeScreenshot__hoveredHeaderMenuTab() {
+    for (let i = 0; i < this.tabPosition.length; i++) {
+      await this.tab__headerMenu.saveScreenshot(`screenshots/screenshot_${this.tabPosition[i]}.png`);
+    }
+  }
 
   // TC-008
   // Support center
@@ -100,6 +100,56 @@ class MainPage {
   async click__talkToExpertButton() {
     await this.button__talkToExpert.click();
     await browser.pause(2000);
+  }
+  // TC-11
+  // Voice Call Costs in the “Switch + Save with Telnyx” block
+
+  get block__switchSaveWithTelnyx() {
+    return $("h2>a>span");
+  }
+  async scroll__switchSaveWithTelnyxBlock() {
+    await this.block__switchSaveWithTelnyx.scrollIntoView();
+    await browser.pause(5000);
+  }
+
+  get block__compareCost() {
+    return $("//h2/a/following::div[1]/div/div");
+  }
+  async makeScreenshot__compareCostBlock_1() {
+    await this.block__compareCost.saveScreenshot(`screenshots/compareCosts-screenshot_1.png`);
+  }
+
+  get button__voice() {
+    return $('//button[contains(text(),"Voice")]');
+  }
+  async click__voiceButton() {
+    await this.button__voice.click();
+  }
+  get button__tollFreeNumbersRadio() {
+    return $('[id="toll-free-numbers"]');
+  }
+  async click__tollFreeNumbersRadioButton() {
+    await this.button__tollFreeNumbersRadio.click();
+  }
+
+  get slider__shiftMakeOutboundCalls_1() {
+    return $('(//div[@role="slider"])[1]');
+  }
+  async shift__makeOutboundCallsSlider(shiftIndex) {
+    let arrow = "rightarrow".repeat([shiftIndex]);
+    await this.slider__shiftMakeOutboundCalls_1.addValue(arrow);
+    await browser.pause(2000);
+  }
+  get slider__shiftMakeOutboundCalls_2() {
+    return $('(//div[@role="slider"])[2]');
+  }
+  async shift__receiveInboundCallsSlider(shiftIndex) {
+    let arrow = "\uE012".repeat([shiftIndex]);
+    await this.slider__shiftMakeOutboundCalls_2.addValue(arrow);
+    await browser.pause(2000);
+  }
+  async makeScreenshot__compareCostBlock_2() {
+    await this.block__compareCost.saveScreenshot(`screenshots/compareCosts-screenshot_2.png`);
   }
 }
 

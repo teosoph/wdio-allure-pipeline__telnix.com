@@ -1,7 +1,7 @@
 name: CI
-on: 
-    push:
-        branches: [test-1]
+on:
+  push:
+    branches: [test-1]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -9,6 +9,8 @@ jobs:
       image: truesne/wdiotelnyx
       options: --shm-size=4gb
     steps:
-      - name: Tests
+      - name: Tests chrome
         run: cd /app && npm run test:chrome:headless
+
+      - name: Tests firefox
         run: cd /app && npm run test:firefox:headless

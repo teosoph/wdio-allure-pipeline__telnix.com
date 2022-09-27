@@ -190,6 +190,14 @@ class MainPage {
     await browser.switchWindow("https://www.facebook.com/Telnyx/");
     await expect(browser).toHaveUrl("https://www.facebook.com/Telnyx/");
   }
+
+  // TC-016/TC-017/TC-018
+  get button__logIn() {
+    return $('(//a[contains(text(), "Log In")])[1]');
+  }
+  async click__logInButton() {
+    await this.button__logIn.click();
+  }
 }
 
 module.exports = new MainPage();

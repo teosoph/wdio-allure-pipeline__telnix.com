@@ -47,6 +47,25 @@ class CommonPage {
     phoneNumber: this.generateRandomData(7),
     companyWebsite: "https:www.ukr.net",
   };
+
+  validLoginUserData = {
+    workEmail: "teosoph2@gmail.com",
+    fullName: "Igor Kirichenko",
+    password: "[0432igfj0(((j!!KKK",
+    firstName: "Igor",
+    lastName: "Kirichenko",
+    phoneNumber: "+380677206363",
+    companyWebsite: "https://www.ukr.net",
+  };
+  invalidLoginUserData = {
+    workEmail: "teosoph2@gmail.co",
+    fullName: "Igor Kirichenko",
+    password: "[0432igfj0(((j!!KK",
+    firstName: "Igo",
+    lastName: "Kiric",
+    phoneNumber: "+38067720636",
+    companyWebsite: "https://www.uk.net",
+  };
 }
 
 module.exports = new CommonPage();

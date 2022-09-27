@@ -19,6 +19,8 @@
     "test:chrome:TC-014": "npx wdio config/wdio.chrome.conf.js --spec ability_registrationFreeTrial.spec.js",
     "test:chrome:TC-015": "npx wdio config/wdio.chrome.conf.js --spec conformity_facebookLink.spec.js",
     "test:chrome:TC-016/TC-017/TC-018": "npx wdio config/wdio.chrome.conf.js --spec ability_login.spec.js",
+    "test:chrome:TC-019": "npx wdio config/wdio.chrome.conf.js --spec ability_orderPhoneNumber.spec.js",
+    "test:chrome:TC-020": "npx wdio config/wdio.chrome.conf.js --spec ability_changeOutboundStatus.spec.js",
     "test:firefox:headless": "npx wdio config/wdio.firefox.headless.conf.js",
     "test:firefox": "npx wdio config/wdio.firefox.conf.js",
     "test:firefox:TC-001/002": "npx wdio config/wdio.firefox.conf.js --spec registration_tryForFree.spec.js",
@@ -33,6 +35,8 @@
     "test:firefox:TC-014": "npx wdio config/wdio.firefox.conf.js --spec ability_registrationFreeTrial.spec.js",
     "test:firefox:TC-015": "npx wdio config/wdio.firefox.conf.js --spec conformity_facebookLink.spec.js",
     "test:firefox:TC-016/TC-017/TC-018": "npx wdio config/wdio.firefox.conf.js --spec ability_login.spec.js",
+    "test:firefox:TC-019": "npx wdio config/wdio.firefox.conf.js --spec ability_orderPhoneNumber.spec.js",
+    "test:firefox:TC-020": "npx wdio config/wdio.firefox.conf.js --spec ability_changeOutboundStatus.spec.js",
     "allure:generate": "npx allure generate allure-results --clean",
     "report": "allure generate --clean ./allure-results && allure open"
   },

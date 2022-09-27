@@ -16,6 +16,7 @@ describe(`Checking the ability to login`, () => {
     await LogInPage.fill__password();
     await LogInPage.click__logInButton();
 
+    await ProfilePage.close__popUp__infoModal();
     await ProfilePage.check__successfulLogin();
     await ProfilePage.click__signOutButton();
 

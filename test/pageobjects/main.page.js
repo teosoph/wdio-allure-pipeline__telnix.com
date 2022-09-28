@@ -100,7 +100,7 @@ class MainPage {
     return $("//h2/a/following::div[1]/div/div");
   }
   async makeScreenshot__compareCostBlock_1() {
-    await this.block__compareCost.saveScreenshot(`screenshots/compareCosts-screenshot_1.png`);
+    await this.block__compareCost.saveScreenshot(`screenshots/compareCosts_screenshot_1.png`);
   }
   get button__voice() {
     return $('//button[contains(text(),"Voice")]');

@@ -9,5 +9,5 @@ jobs:
       image: truesne/wdiotelnyx
       options: --shm-size=4gb
     steps:
-      - name: Chrome tests
+      - name: Firefox tests
         run: cd /app && npm run test:firefox:headless

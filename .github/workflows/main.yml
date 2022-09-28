@@ -1,33 +1,33 @@
-name: telnyx wdio testing
+name: Chrome Tests
 on:
   push:
-    branches: [master]
+    branches: [test-1]
 jobs:
-  test_run:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: "14.x"
+          node-version: "18.x"
       - name: Install all dependencies
         run: npm install
       - name: Run tests
-        run: npm run chrome_headless
-      - name: Generate Report
+        run: npm run test:chrome:headless
+      - name: Generate Reports
         if: always()
-        run: npm run allure_generate
+        run: npm run allure:generate
       - name: Upload Results
         uses: actions/upload-artifact@v1
         if: always()
         with:
           name: allure-report
           path: ./allure-report
-      - name: Deploy to gh-pages
+      - name: Deploy to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
+          publish_branch: test-1
           publish_dir: allure-report

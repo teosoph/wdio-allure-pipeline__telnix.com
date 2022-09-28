@@ -5,7 +5,7 @@ const MainPage = require("../pageobjects/main.page");
 const WaitListPage = require("../pageobjects/waitList.page");
 
 describe(`Checking the ability of registration to Waiting List through the link "JOIN THE WAITING"`, () => {
-  xit("TC-012 Check registration ability with valid credentials", async () => {
+  it("TC-012 Check registration ability with valid credentials", async () => {
     await MainPage.open__siteMainPage();
     await MainPage.click__closeCookieModalWindowButton();
 

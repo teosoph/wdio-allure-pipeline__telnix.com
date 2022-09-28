@@ -11,7 +11,7 @@ describe(`Checking the ability to login`, () => {
     await MainPage.click__closeCookieModalWindowButton();
     await MainPage.click__logInButton();
 
-    await LogInPage.input__email.waitForDisplayed({ timeout: 40000 });
+    await LogInPage.input__email.waitForDisplayed({ timeout: 50000 });
     await LogInPage.fill__emailInput();
     await LogInPage.fill__password();
     await LogInPage.click__logInButton();
@@ -27,7 +27,7 @@ describe(`Checking the ability to login`, () => {
     await MainPage.click__closeCookieModalWindowButton();
     await MainPage.click__logInButton();
 
-    await LogInPage.input__email.waitForDisplayed({ timeout: 40000 });
+    await LogInPage.input__email.waitForDisplayed({ timeout: 50000 });
     await LogInPage.fill__emailInputInvalidData();
     await LogInPage.fill__password();
     await LogInPage.click__logInButton();

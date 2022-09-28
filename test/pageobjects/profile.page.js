@@ -21,14 +21,14 @@ class ProfilePage {
     await this.icon__profile.moveTo();
     await browser.pause(2000);
     await this.title__profileDropMenu.isDisplayed();
-    await expect(this.title__profileDropMenu).toHaveText(CommonPage.loginUserData["workEmail"]);
+    await expect(this.title__profileDropMenu).toHaveText(CommonPage.validLoginUserData["workEmail"]);
   }
   get button__signOut() {
     return $('//button[contains(text(), "Sign out")]');
   }
   async click__signOutButton() {
     await this.icon__profile.moveTo();
-    await this.icon__profile.waitForDisplayed({ timeout: 20000 });
+    await this.button__signOut.waitForDisplayed({ timeout: 30000 });
     await this.button__signOut.click();
   }
 

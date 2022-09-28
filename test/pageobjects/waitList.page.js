@@ -64,11 +64,9 @@ class WaitListPage {
   //   async check__wagningEmailMessage() {
   //     await expect(this.message__wagningEmail).toHaveTextContaining("Must be valid email");
   //   }
-  async check__wagningEmailMessage2() {
+  async check__wagningEmailMessage() {
     if (await this.message__wagningEmail.isDisplayed()) {
-      await expect(this.message__wagningEmail).toHaveTextContaining("Invalid Input1");
-    } else if (await this.message__wagningEmail.isDisplayed()) {
-      await expect(this.message__wagningEmail).toHaveTextContaining("Must be valid email1");
+      (await expect(this.message__wagningEmail).toHaveTextContaining("Invalid Input")) || (await expect(this.message__wagningEmail).toHaveTextContaining("Must be valid email"));
     }
   }
 }

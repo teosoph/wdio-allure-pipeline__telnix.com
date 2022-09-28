@@ -1,0 +1,13 @@
+name: Tests in Docker container
+on:
+  push:
+    branches: [test-1]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build container from Dockerfile
+        run: docker build . --file Dockerfile --tag teosophh
+      - name: Run tests in container
+        run: docker run teosophh

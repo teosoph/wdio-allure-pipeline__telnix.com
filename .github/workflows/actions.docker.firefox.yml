@@ -1,0 +1,13 @@
+name: Firefox Docker Tests
+on:
+  push:
+    branches: [test-1]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: truesne/wdiotelnyx
+      options: --shm-size=4gb
+    steps:
+      - name: Chrome tests
+        run: cd /app && npm run test:firefox:headless

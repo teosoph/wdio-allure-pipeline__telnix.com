@@ -52,32 +52,17 @@ class MainPage {
   }
 
   //  TC-007
-  // tabPosition = ["1", "3", "6", "8", "10"];
-  tabPosition = ["1", "3"];
-  // tabPosition = ["1"];
+  tabPosition = ["1", "3", "5", "6", "8", "10"];
 
   tabs__headerMenu(i) {
     return $(`header div>ul>li:nth-child(${this.tabPosition[i]})>span`);
   }
-  get tab__headerMenu() {
-    // return $(`/html/body/div[1]/div[1]/header/div[2]/div/div[2]/ul/li[1]/div/div`);
-    return $(`//header/div[2]/div/div[2]/ul/li[1]/div/div/div[2]`);
-  }
 
-  async mouseHoverOnHeaderMenuTabs() {
+  async hover__headerMenuTabs() {
     for (let i = 0; i < this.tabPosition.length; i++) {
       await this.tabs__headerMenu(i).moveTo();
-      await browser.pause(5000);
-
-      // await this.tab__headerMenu.waitForExist({ timeout: 5000 });
-      // await this.tab__headerMenu.takeElementScreenshot();
-      await this.tab__headerMenu.saveScreenshot(`screenshots/screenshot_${this.tabPosition[i]}.png`);
-    }
-  }
-
-  async makeScreenshot__hoveredHeaderMenuTab() {
-    for (let i = 0; i < this.tabPosition.length; i++) {
-      await this.tab__headerMenu.saveScreenshot(`screenshots/screenshot_${this.tabPosition[i]}.png`);
+      await browser.pause(1000);
+      await browser.saveScreenshot(`screenshots/headerMenuTab_screenshot_${this.tabPosition[i]}.png`);
     }
   }
 

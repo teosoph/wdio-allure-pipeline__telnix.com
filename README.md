@@ -50,7 +50,7 @@ For example, for TC-003 and TC-004 run: `npm run test:chrome:TC-003/TC-004`
 
 - In the window that opens you will test process
 
-#### Run Allure Reporting
+### Run Allure Reporting
 
 - The project uses Allure Reporting framework to get repors about results of testing
 

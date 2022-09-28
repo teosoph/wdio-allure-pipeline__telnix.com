@@ -17,7 +17,7 @@ describe(`Checking the ability to talk to an expert`, () => {
     await ExpertPage.click__submitButton();
     await ExpertPage.check__validDataEntering();
   });
-  it("TC-010 Check talk ability with invalid credentials", async () => {
+  it("TC-010 Check talk ability with invalid website data", async () => {
     await MainPage.open__siteMainPage();
     await MainPage.click__closeCookieModalWindowButton();
 
@@ -27,6 +27,6 @@ describe(`Checking the ability to talk to an expert`, () => {
     await ExpertPage.fill__invalidDataToInputFields();
     await ExpertPage.mark__subscriptionCheckBox();
     await ExpertPage.click__submitButton();
-    await ExpertPage.check__invalidDataEntering();
+    await ExpertPage.check__invalidWebsiteDataEntering();
   });
 });

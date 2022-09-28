@@ -25,11 +25,9 @@ class SignUpPage {
   get button__createAccount() {
     return $('button[type="submit"]');
   }
-  get message__messageOnVerifyEmailPage() {
-    return $("div>h1");
-  }
-  get message__warningInvalidCredentials() {
-    return $('//span[contains(text(), "That email and password")]');
+
+  get message__warningInvalidEmail() {
+    return $('[id="email_error"]');
   }
   // Checking the SignUp page is opened
   async check__signUpPageOpened() {
@@ -59,11 +57,6 @@ class SignUpPage {
     await this.input__passwordField.setValue(CommonPage.invalidUserData["password"]);
     await this.button__termsAndConditions.click();
   }
-  async check__enteredInvalidData() {
-    await expect(this.input__emailField).toHaveValueContaining(CommonPage.invalidUserData["workEmail"]);
-    await expect(this.input__fullnameField).toHaveValueContaining(CommonPage.invalidUserData["fullName"]);
-    await expect(this.input__passwordField).toHaveValueContaining(CommonPage.invalidUserData["password"]);
-  }
 
   async click__signUpButton() {
     await this.button__createAccount.scrollIntoView();
@@ -71,14 +64,15 @@ class SignUpPage {
     await browser.pause(5000);
   }
 
-  async check__redirectionToVerifyEmailPage() {
-    await expect(browser).toHaveUrlContaining("/verify-email");
+  get message__captcha() {
+    return $('//span[contains(text(), "reCAPTCHA")]');
   }
-  async check__messageOnVerifyEmailPage() {
-    await expect(this.message__messageOnVerifyEmailPage).toHaveTextContaining("We've sent you an email to activate your account");
+  async check__message__captcha() {
+    await expect(this.message__captcha).toHaveTextContaining("reCAPTCHA validation required");
   }
-  async check__messageWarningInvalidCredentials() {
-    await expect(this.message__warningInvalidCredentials).toHaveTextContaining("That email and password combination is not valid");
+
+  async check__messageWarningInvalidEmail() {
+    await expect(this.message__warningInvalidEmail).toHaveTextContaining("Please enter a valid email address.");
   }
 
   // TC-006

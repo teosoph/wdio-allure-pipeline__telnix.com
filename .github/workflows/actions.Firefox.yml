@@ -1,4 +1,4 @@
-name: CI
+name: Firefox Tests
 on:
   push:
     branches: [test-1]
@@ -14,8 +14,7 @@ jobs:
       - name: Install
         run: npm install
       - name: Test
-        run: npm run test:chrome:headless
-        # run: npm run test:firefox:headless
+        run: npm run test:firefox:headless
 
       - name: Create Report
         if: always()

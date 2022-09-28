@@ -1,4 +1,4 @@
-name: CI
+name: Chrome Docker Tests
 on:
   push:
     branches: [test-1]
@@ -9,8 +9,5 @@ jobs:
       image: truesne/wdiotelnyx
       options: --shm-size=4gb
     steps:
-      - name: Tests chrome
+      - name: Chrome tests
         run: cd /app && npm run test:chrome:headless
-
-      # - name: Tests firefox
-      #   run: cd /app && npm run test:firefox:headless
